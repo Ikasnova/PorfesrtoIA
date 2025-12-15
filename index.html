@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProfesorIA – Aula Virtual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Roboto Condensed"', 'sans-serif'],
+            },
+            colors: {
+              // Custom Palette Mapping
+              brand: {
+                primary: '#277cd4',   // Blue
+                secondary: '#6080a3', // Muted Blue/Grey
+                accent: '#3eb7ae',    // Teal
+                dark: '#454242',      // Dark Grey
+              },
+              // Remapping 'violet' to the new Primary Blue to theme the whole app instantly
+              violet: {
+                50: '#f0f8ff',
+                100: '#e0f0fe',
+                200: '#bae2fd',
+                300: '#7ccafd',
+                400: '#36b1f8',
+                500: '#277cd4', // Main Primary
+                600: '#1b61c9',
+                700: '#164da3',
+                800: '#164283',
+                900: '#163868',
+              },
+              // Remapping 'slate' mostly to the requested secondary/dark tones
+              slate: {
+                50: '#f8fafc',
+                100: '#f1f5f9',
+                200: '#e2e8f0',
+                300: '#cbd5e1',
+                400: '#94a3b8',
+                500: '#6080a3', // Secondary Color injected here
+                600: '#475569',
+                700: '#454242', // Dark Color injected here as base text
+                800: '#334155',
+                900: '#1e293b',
+                950: '#0f172a',
+              },
+              // Injecting the Accent Teal into Emerald/Teal utilities
+              emerald: {
+                400: '#3eb7ae',
+                500: '#3eb7ae',
+                600: '#2da098',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #6080a3; /* Secondary Color */
+        border-radius: 4px;
+        opacity: 0.5;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #475569; 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #277cd4; /* Primary Color */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "jszip": "https://esm.sh/jszip@3.10.1",
+    "file-saver": "https://esm.sh/file-saver@2.0.5"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 dark:bg-slate-950 text-[color:var(--brand-dark)] dark:text-slate-100 transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
